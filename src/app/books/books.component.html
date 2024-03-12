@@ -1,0 +1,29 @@
+<h1>Programming Books List !</h1>
+
+<!-- <button (click) = "handleClick()" [disabled] = isDisabled >Button</button> -->
+
+<!-- <input type = "text" (input) = "handleInput($event)"/>
+<p>{{myName}}</p> -->
+
+<!-- <input type = "text"  [(ngModel)] = "myName"/>
+<p>{{myName}}</p> -->
+
+<!-- <button (click) = " isShowing = !isShowing" > -->
+<!-- <span *ngIf="!isShowing"> Show Books</span>    
+<span *ngIf = "isShowing"> Hide Books</span>     -->
+<!-- <ng-container *ngIf="!isShowing"> Show Books</ng-container>    
+<ng-container *ngIf = "isShowing"> Hide Books</ng-container>   
+</button> -->
+
+<ul *ngIf="isShowing">
+    <ng-container *ngFor = "let singleBook of books; let i = index">
+    <app-book (bookEmitter) = "addToCart($event)" [book]="singleBook"></app-book>
+</ng-container>
+</ul>
+
+<!-- <button (click)= "handleclick()" [disabled] = "isDisabled"> Show Books</button>
+
+<input type ="text" [(ngModel)]="myName" >
+<div>
+    {{myName}}
+</div> -->
