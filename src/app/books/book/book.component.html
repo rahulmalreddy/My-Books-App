@@ -1,0 +1,12 @@
+<li class="book">
+    <!-- {{i+1}} -->
+    <img [src]="book.imagesrc" [alt]="book.bookname" width=100 />
+    <!-- <p class="title">{{ 'book.bookname' | cutomPipeForAddingVariable }} by {{ book.authorname }} -->
+        <p class="title">{{ 'book.bookname'  }} by {{ book.authorname }}
+    </p>
+    <p class="currency">
+        {{book.bookprice | currency :'US'}}
+    </p>
+    <button *ngIf = "!isInCart"  (click) = "addToCart()" >Add to Cart</button>
+    <button  *ngIf = "isInCart" (click) = "removeFromCart()">Remove from Cart</button>
+</li>
